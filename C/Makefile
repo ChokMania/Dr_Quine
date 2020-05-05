@@ -40,8 +40,8 @@ $(SULLY): $(OBJ3)
 	@echo "$(_DEF)"
 
 clean:
-	@echo "$(_RED)$(OBJ1) $(OBJ2) $(OBJ3) removed$(_DEF)"
-	@rm -f $(OBJ1) $(OBJ2) $(OBJ3)
+	@echo "$(_RED)$(OBJ1) $(OBJ2) $(OBJ3) Grace_kid.c Sully_* removed$(_DEF)"
+	@rm -f $(OBJ1) $(OBJ2) $(OBJ3) Grace_kid.c Sully_*
 
 fclean: clean
 	@echo "$(_RED)$(COLLEEN) $(GRACE) $(SULLY) removed$(_DEF)"
