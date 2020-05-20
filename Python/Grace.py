@@ -1,6 +1,6 @@
 # Define defines
-USELESS = "I am useless"
-CODE = "# Define defines%cUSELESS = %c%s%c%cCODE = %c%s%c%cMAIN = lambda f : f.write(CODE %c (10, 34, USELESS, 34, 10, 34, CODE, 34, 10, 37, 10, 10, 34, 34, 34, 34, 10))%c%cMAIN(open(%cGrace_kid.py%c, %cw+%c))%c"
-MAIN = lambda f : f.write(CODE % (10, 34, USELESS, 34, 10, 34, CODE, 34, 10, 37, 10, 10, 34, 34, 34, 34, 10))
+FT = exec
+CODE = "# Define defines%cFT = exec%cCODE = %c%s%c%cMAIN = %cf = open(%cGrace_kid.py%c, %cw+%c);f.write(CODE %c (10, 10, 34, CODE, 34, 10, 39, 34, 34, 34, 34, 37, 39, 10, 10, 10));f.close();%c%c%cFT(MAIN)%c"
+MAIN = 'f = open("Grace_kid.py", "w+");f.write(CODE % (10, 10, 34, CODE, 34, 10, 39, 34, 34, 34, 34, 37, 39, 10, 10, 10));f.close();'
 
-MAIN(open("Grace_kid.py", "w+"))
+FT(MAIN)
