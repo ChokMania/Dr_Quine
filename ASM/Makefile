@@ -1,17 +1,18 @@
+CC = gcc
+NASM = nasm -f elf64
 FLAGS = -Wall -Wextra -Werror
-CC = clang
 
 COLLEEN = Colleen
 GRACE = Grace
 SULLY = Sully
 
-SRC1 = Colleen/Colleen.c
-SRC2 = Grace/Grace.c
-SRC3 = Sully/Sully.c
+SRC1 = Colleen/Colleen.s
+SRC2 = Grace/Grace.s
+SRC3 = Sully/Sully.s
 
-OBJ1 = $(SRC1:.c=.o)
-OBJ2 = $(SRC2:.c=.o)
-OBJ3 = $(SRC3:.c=.o)
+OBJ1 = $(SRC1:.s=.o)
+OBJ2 = $(SRC2:.s=.o)
+OBJ3 = $(SRC3:.s=.o)
 
 _DEF = $'\033[0m
 _RED = $'\033[31m
@@ -34,14 +35,12 @@ $(SULLY): $(OBJ3)
 	@$(CC) -o Sully/$(SULLY) $(OBJ3)
 	@echo "$(_GREEN)$(SULLY) created.$(_DEF)"
 
-%.o: %.c
-	@echo "$(_YELLOW)"
-	$(CC) $(FLAGS) -c $< -o $@
-	@echo "$(_DEF)"
+%.o: %.s
+	@$(NASM) $<
 
 clean:
-	@echo "$(_RED)$(OBJ1) $(OBJ2) $(OBJ3) Grace/Grace_kid.c Sully/Sully_*.o Sully/Sully_*.c removed$(_DEF)"
-	@rm -f $(OBJ1) $(OBJ2) $(OBJ3) Grace/Grace_kid.c Sully/Sully_*.o Sully/Sully_*.c
+	@echo "$(_RED)$(OBJ1) $(OBJ2) $(OBJ3) Grace/Grace_kid.s Sully/Sully_*.o Sully/Sully_*.s removed$(_DEF)"
+	@rm -f $(OBJ1) $(OBJ2) $(OBJ3) Grace/Grace_kid.s Sully/Sully_*.o Sully/Sully_*.s
 
 fclean: clean
 	@echo "$(_RED)Colleen/$(COLLEEN) Grace/$(GRACE) Sully/$(SULLY) Sully/Sully_* removed$(_DEF)"
