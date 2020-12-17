@@ -36,6 +36,7 @@ $(SULLY): $(OBJ3)
 	@echo "$(_GREEN)$(SULLY) created.$(_DEF)"
 
 %.o: %.s
+	@echo "$(_YELLOW)$(NASM) $<$(_DEF)"
 	@$(NASM) $<
 
 clean:

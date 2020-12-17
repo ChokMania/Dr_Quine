@@ -35,9 +35,8 @@ $(SULLY): $(OBJ3)
 	@echo "$(_GREEN)$(SULLY) created.$(_DEF)"
 
 %.o: %.c
-	@echo "$(_YELLOW)"
-	$(CC) $(FLAGS) -c $< -o $@
-	@echo "$(_DEF)"
+	@echo "$(_YELLOW)$(CC) $(FLAGS) -c $< -o $@$(_DEF)"
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	@echo "$(_RED)$(OBJ1) $(OBJ2) $(OBJ3) Grace/Grace_kid.c Sully/Sully_*.o Sully/Sully_*.c removed$(_DEF)"
