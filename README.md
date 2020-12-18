@@ -69,7 +69,7 @@ Sully created.</code></pre>
 
 ### Sully
 ```
-> cd Sully; ./Sully; diff Sully.s Sully_5.s; diff Sully.s Sully_4.s; diff Sully.s Sully_3.s; diff Sully.s Sully_2.s; diff Sully.s Sully_1.s; diff Sully.s Sully_0.s</
+> cd Sully; ./Sully; diff Sully.s Sully_5.s; diff Sully.s Sully_4.s; diff Sully.s Sully_3.s; diff Sully.s Sully_2.s; diff Sully.s Sully_1.s; diff Sully.s Sully_0.s
 16c16
 < mov r12, 5
 ---
