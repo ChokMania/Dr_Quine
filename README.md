@@ -1,4 +1,4 @@
-# Dr_Quinn [(subject)](https://cdn.intra.42.fr/pdf/pdf/15956/en.subject.pdf)
+# Dr_Quine [(subject)](https://cdn.intra.42.fr/pdf/pdf/15956/en.subject.pdf)
 
 ## Introduction
 A quine is a computer program (a kind of metaprogram) whose output and source
